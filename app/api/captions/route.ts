@@ -29,6 +29,8 @@ export async function GET(req: NextRequest) {
     const playerResponse = JSON.parse(match[1]);
     const tracks =
       playerResponse?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+
+    console.log(tracks);
     if (!tracks || tracks.length === 0) {
       return NextResponse.json({ error: "자막 트랙 없음" }, { status: 404 });
     }
