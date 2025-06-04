@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+}
+
+body {
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
