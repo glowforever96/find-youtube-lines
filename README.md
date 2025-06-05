@@ -53,6 +53,8 @@ const captionJson = await captionResponse.json();
 ```bash
 git clone https://github.com/glowforever96/find-youtube-lines.git
 
+cd find-youtube-lines
+
 npm install
 
 npm run dev
@@ -60,9 +62,10 @@ npm run dev
 
 ## 아쉬운점
 
-실제로 배포 환경에서는 CORS 정책 혹은 YouTube 측 차단으로 인해 데이터를 아예 가져오지 못하는 문제가 발생했습니다.
+실제로 Vercel로 배포한 이후에는 개발 환경과 달리 유튜브의 요청 차단으로 인해 데이터를 가져오는 데 실패했습니다.<br/>
+추출한 HTML의 형식도 로컬에서와는 다른 모습이었습니다.
 
-또한 유튜브 공식 API에서는 영상 자막 데이터를 직접적으로 제공하지 않기 때문에 Youtube HTML을 통쨰로 요청한뒤 내부 스크립트 데이터를 추출하는 로직이기에 많이 불안정합니다. 여러 번 요청을 시도하면 정상적으로 자막을 받아오는 경우도 있습니다.
+또한 유튜브 공식 API에서는 영상 자막 데이터를 직접적으로 제공하지 않기 때문에 유튜브 HTML을 통째로 요청한뒤 내부 스크립트 데이터를 추출하는 로직이기에 많이 불안정합니다. 한번에 받아오지 못하고 여러 번 요청을 시도하면 정상적으로 자막을 받아오는 경우가 좀 있었습니다.
 
 ![](https://velog.velcdn.com/images/boyfromthewell/post/451dd644-6aeb-4e17-b814-88804d206eee/image.png)
 ![](https://velog.velcdn.com/images/boyfromthewell/post/d956f15b-d4d6-42f8-b550-e8a3db773203/image.png)
